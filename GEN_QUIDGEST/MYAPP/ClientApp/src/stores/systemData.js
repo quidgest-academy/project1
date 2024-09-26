@@ -16,12 +16,12 @@ const state = () => {
 		applicationName: 'My application',
 
 		genio: {
-			buildVersion: 23,
-			dbIdxVersion: 40,
-			dbVersion: '2540',
+			buildVersion: 24,
+			dbIdxVersion: 41,
+			dbVersion: '2541',
 			genioVersion: '349,60',
 			trackChangesVersion: '0',
-			assemblyVersion: '349,60.2540.0.23',
+			assemblyVersion: '349,60.2541.0.24',
 			generationDate: {
 				year: 2024,
 				month: 9,
