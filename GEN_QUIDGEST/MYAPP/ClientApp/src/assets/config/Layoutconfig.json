@@ -1,0 +1,184 @@
+{
+	"DbEditActionPlacement": {
+		"values": [
+			"left",
+			"right"
+		],
+		"default": "left"
+	},
+	"FormAnchorsPosition": {
+		"values": [
+			"form-header",
+			"sidebar"
+		],
+		"default": "sidebar"
+	},
+	"DbEditPagerPlacement": {
+		"values": [
+			"left",
+			"right"
+		],
+		"default": "left"
+	},
+	"DbEditMultipleActionPlacement": {
+		"values": [
+			"left",
+			"right"
+		],
+		"default": "left"
+	},
+	"LoginStyle": {
+		"values": [
+			"single_page",
+			"embeded_page"
+		],
+		"default": "single_page"
+	},
+	"LanguagePlacement": {
+		"values": [
+			"in_header",
+			"in_footer"
+		],
+		"default": "in_footer"
+	},
+	"UserRegisterStyle": {
+		"values": [
+			"button",
+			"hyperlink"
+		],
+		"default": "button"
+	},
+	"FooterEnable": {
+		"values": [
+			true,
+			false
+		],
+		"default": true
+	},
+	"BreadcrumbsContent": {
+		"values": [
+			"simplified",
+			"detailed",
+			"hidden"
+		],
+		"default": "detailed"
+	},
+	"RowActionDisplay": {
+		"values": [
+			"inline",
+			"dropdown"
+		],
+		"default": "dropdown"
+	},
+	"DefaultSidebarState": {
+		"values": [
+			"opened",
+			"closed"
+		],
+		"default": "opened"
+	},
+	"ModulesStyle": {
+		"values": [
+			"list",
+			"dropdown",
+			"collapsible"
+		],
+		"default": "dropdown"
+	},
+	"MenuSearchEnable": {
+		"values": [
+			true,
+			false
+		],
+		"default": true
+	},
+	"BookmarkEnable": {
+		"values": [
+			true,
+			false
+		],
+		"default": true
+	},
+	"ShowPasswordToggle": {
+		"values": [
+			true,
+			false
+		],
+		"default": true
+	},
+	"AuthenticationStyle": {
+		"values": [
+			"default",
+			"light",
+			"secondary"
+		],
+		"default": "default"
+	},
+	"HelpListShort": {
+		"values": [
+			"Tooltip",
+			"Popover",
+			"Subtitle",
+			"Info-banner"
+		],
+		"default": "Subtitle"
+	},
+	"HelpListDetail": {
+		"values": [
+			"Popover",
+			"Subtitle",
+			"Info-banner"
+		],
+		"default": "Popover"
+	},
+	"HelpInputShort": {
+		"values": [
+			"Tooltip",
+			"Subtext",
+			"Popover"
+		],
+		"default": "Tooltip"
+	},
+	"HelpInputDetail": {
+		"values": [
+			"Popover"
+		],
+		"default": "Popover"
+	},
+	"HelpGroupShort": {
+		"values": [
+			"Tooltip",
+			"Popover",
+			"Subtitle"
+		],
+		"default": "Tooltip"
+	},
+	"HelpGroupDetail": {
+		"values": [
+			"Popover",
+			"Subtitle"
+		],
+		"default": "Popover"
+	},
+	"HeaderPlacement": {
+		"values": [
+			"in_contentPanel",
+			"in_menuPanel"
+		],
+		"default": "in_menuPanel"
+	},
+	"MenuBackgroundColor": {
+		"values": [
+			"dark",
+			"light"
+		],
+		"default": "dark"
+	},
+	"MenuBrand": {
+		"values": [
+			"Image",
+			"Text"
+		],
+		"default": "Text"
+	}
+}

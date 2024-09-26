@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Projecto>
+	<Definicoes>
+		<Sistema>PRO</Sistema>
+		<Cliente>QUIDGEST</Cliente>
+		<Versao>2540</Versao>
+	</Definicoes>
+	<Modulos>
+		<Modulo ID="PRO">
+			<PROG>My application</PROG>
+			<PLATAFOR>VUE</PLATAFOR>
+		</Modulo>
+	</Modulos>
+</Projecto>

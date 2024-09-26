@@ -1,0 +1,17 @@
+﻿.q-dropdown-button-wrapper {
+	.dropdown-menu {
+		border-radius: 0;
+	}
+
+	.arrow-down {
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 5px solid #000000;
+	}
+
+	.dropdown-button-wrapper {
+		cursor: pointer;
+	}
+}

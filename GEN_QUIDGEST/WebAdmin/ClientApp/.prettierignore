@@ -1,0 +1,10 @@
+# Build artifacts
+dist/
+
+# Ignore files for PNPM and NPM
+.pnpm-store/
+node_modules/
+
+*.json
+*.yml
+*.yaml

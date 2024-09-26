@@ -1,0 +1,65 @@
+﻿.i-chip {
+	border-radius: 1rem;
+	box-sizing: border-box;
+	font-size: 0.75rem;
+	padding: 0 0.5rem;
+	color: $gray-dark;
+	background-color: #ebeeff;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-weight: 500;
+	letter-spacing: 0.04rem;
+
+	&:hover, &:focus {
+		background-color: $light;
+	}
+
+	&--action {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__icon {
+		color: #fff;
+		font-size: 1.25rem;
+		padding: 0.5rem;
+
+		&--filter {
+			margin-right: -0.75rem;
+		}
+	}
+
+	&--primary {
+		background: #0091ea;
+		color: #fff;
+
+		&:hover, &:focus {
+			background-color: #0064b7;
+		}
+	}
+
+	a {
+		color: #fff;
+		text-align: center;
+	}
+
+	.q-btn {
+		background: transparent;
+		padding: 0;
+
+		.q-icon__svg {
+			fill: $primary;
+			margin: 0.15rem 0;
+			width: 10px;
+		}
+
+		&:hover {
+			background: transparent;
+
+			.q-icon__svg {
+				fill: $hover-primary;
+			}
+		}
+	}	
+}

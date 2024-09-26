@@ -1,0 +1,119 @@
+﻿<template>
+	<teleport
+		v-if="isReady"
+		to="#q-modal-form-suggestion-list-body">
+		<q-table
+			:rows="tableRows"
+			:columns="tableColumns"
+			:config="tableConfig" />
+	</teleport>
+</template>
+
+<script>
+	import { computed } from 'vue'
+	import { mapActions } from 'pinia'
+
+	import { useGenericDataStore } from '@/stores/genericData.js'
+	import { postData } from '@/api/network'
+	import hardcodedTexts from '@/hardcodedTexts'
+
+	import _merge from 'lodash-es/merge'
+
+	export default {
+		name: 'QSuggestionList',
+
+		expose: [],
+
+		data()
+		{
+			return {
+				model: {},
+
+				tableConfig: {
+					showFooter: false,
+					allowColumnConfiguration: false,
+					globalSearch: {
+						visibility: false
+					}
+				},
+
+				tableColumns: [
+					{
+						order: 1,
+						dataType: 'Text',
+						label: computed(() => this.Resources[hardcodedTexts.type]),
+						name: 'SuggestionType',
+						sortable: true
+					},
+					{
+						order: 2,
+						dataType: 'Text',
+						label: computed(() => this.Resources[hardcodedTexts.field]),
+						name: 'OldValue',
+						sortable: true
+					},
+					{
+						order: 3,
+						dataType: 'Text',
+						label: computed(() => this.Resources[hardcodedTexts.suggestedText]),
+						name: 'NewValue',
+						sortable: true
+					}
+				],
+
+				isReady: false
+			}
+		},
+
+		mounted()
+		{
+			const modalProps = {
+				id: 'form-suggestion-list',
+				headerTitle: computed(() => this.Resources[hardcodedTexts.suggestions]),
+				closeButtonEnable: true,
+				hideFooter: true,
+				dismissWithEsc: true,
+				dismissAction: this.goBack,
+				isActive: true
+			}
+
+			this.setModal(modalProps)
+			this.fetchData()
+		},
+
+		computed: {
+			tableRows()
+			{
+				var rows = []
+
+				if (this.model.Suggestions && this.model.Suggestions.length > 0)
+				{
+					for (let i = 0; i < this.model.Suggestions.length; i++)
+					{
+						const row = {
+							Rownum: i,
+							Fields: this.model.Suggestions[i]
+						}
+						rows.push(row)
+					}
+				}
+
+				return rows
+			}
+		},
+
+		methods: {
+			...mapActions(useGenericDataStore, [
+				'setModal'
+			]),
+
+			fetchData()
+			{
+				postData('Suggestion', 'List', null, (data) => {
+					_merge(this.model, data)
+					this.isReady = true
+				})
+			}
+		}
+	}
+</script>

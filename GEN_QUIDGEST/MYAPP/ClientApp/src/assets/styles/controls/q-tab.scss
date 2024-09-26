@@ -1,0 +1,163 @@
+﻿.c-tab {
+	@extend .nav;
+
+	&__list {
+		button {
+			padding: 0;
+
+			&:hover:not([disabled]) {
+				background-color: transparent;
+				border-color: transparent;
+			}
+
+			&:focus,
+			&:focus:not([disabled]) {
+				outline: $action-focus-width $action-focus-style $action-focus-color;
+			}
+		}
+
+		.nav-link {
+			@extend a;
+			display: block;
+			padding: 0.645rem 1rem;
+
+			&:hover {
+				color: $on-background;
+				border-color: transparent;
+			}
+		}
+
+		.active {
+			margin-bottom: -1px;
+		}
+	}
+
+	&__divider {
+		@extend .nav-tabs;
+		border: none !important;
+
+		.c-tab__item {
+			margin-bottom: -1px;
+			line-height: 1;
+		}
+	}
+
+	&__item {
+		@extend .nav-item;
+
+		&-header {
+			@extend .nav-link;
+
+			&:hover {
+				background-color: #f3f5f6;
+			}
+
+			&.disable {
+				color: $gray-light;
+				cursor: not-allowed;
+			}
+		}
+
+		&-container {
+			@extend .tab-content;
+			border: 1px solid $gray-light;
+			background-color: $container;
+		}
+
+		&-content {
+			@extend .tab-pane;
+
+			@if $compactstyle {
+				padding: 0.55rem;
+			} @else {
+				padding: 1rem;
+			}
+		}
+
+		.nav-link:hover {
+			cursor: pointer;
+		}
+	}
+
+	&__divider &__item {
+		margin-bottom: -1px;
+	}
+
+	&__divider &__item-header {
+		border: 1px solid transparent;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+	}
+
+	&__divider &__item-header.active,
+	&__divider &__item.show &__item-header {
+		color: $gray;
+		background-color: $white;
+		border-color: $input-border-color $input-border-color $white;
+	}
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .active.c-tab__item-header,
+.c-tab__divider .nav-link.active,
+.c-tab__divider .active.c-tab__item-header,
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-item.show .c-tab__item-header,
+.nav-tabs .show.c-tab__item .nav-link,
+.nav-tabs .show.c-tab__item .c-tab__item-header,
+.c-tab__divider .nav-item.show .nav-link,
+.c-tab__divider .nav-item.show .c-tab__item-header,
+.c-tab__divider .show.c-tab__item .nav-link,
+.c-tab__divider .show.c-tab__item .c-tab__item-header {
+	color: $on-background;
+	background-color: $container;
+	border-color: $gray-light $gray-light $container;
+	border-top: 2px solid $gray-light;
+	@if $custom-tab-navigation {
+		// add these lines to remove style from selected
+		border: none;
+		background-color: transparent;
+		margin-bottom: 0.2rem;
+		padding-bottom: 0.2rem;
+		font-weight: 700;
+		box-shadow: 0 0.4rem 0 $primary;
+	}
+}
+
+.c-tab__divider .nav-item.disabled {
+	pointer-events: none !important;
+}
+
+.nav-tabs {
+	background: $white;
+	background-color: transparent;
+	border-bottom: 1px solid #e9ecef;
+
+	.nav-link {
+		border: 1px solid transparent;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+
+		@if $custom-tab-navigation {
+			color: $black;
+			outline: none;
+		}
+
+		@if $custom-tab-navigation {
+			&:hover {
+				border-color: transparent;
+				color: $primary;
+			}
+		}
+	}
+
+	& &.active {
+		color: $secondary;
+		background-color: $white;
+		border-color: #dee2e6 #dee2e6 #fff;
+	}
+}
+
+.tab-group-container {
+	max-width: 100%;
+}

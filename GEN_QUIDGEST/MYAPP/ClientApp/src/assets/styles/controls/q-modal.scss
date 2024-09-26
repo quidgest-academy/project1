@@ -1,0 +1,131 @@
+﻿.c-modal {
+	@extend .modal;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: auto !important;
+
+	&__fade {
+		@extend .fade;
+	}
+
+	&__dialog {
+		@extend .modal-dialog;
+		@extend .focusable-visible;
+		margin: 5vh auto;
+	}
+
+	&--lg {
+		@extend .modal-lg;
+	}
+
+	&__content {
+		@extend .modal-content;
+		border: 1px solid $input-border-color;
+		background-color: $background;
+		max-height: 90vh;
+		border-radius: $border-radius;
+	}
+
+	&__header {
+		@extend .modal-header;
+		border-color: $light;
+		display: block;
+
+		@if $compactstyle {
+			padding: 0.5rem;
+			margin-bottom: 0;
+		} @else {
+			margin-bottom: 1rem;
+		}
+
+		&-title {
+			color: $gray;
+			font-size: 1.25rem;
+			font-weight: 600;
+			letter-spacing: 0.02rem;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			display: inline-block;
+		}
+
+		h1 {
+			margin-bottom: 0;
+		}
+
+		h2 {
+			font: inherit;
+			padding-top: 0.5rem;
+		}
+
+		.q-modal-container__close {
+			position: absolute;
+			top: 0.5rem;
+			right: 0.5rem;
+		}
+	}
+
+	&--center {
+		top: 40% !important;
+		transform: translateY(-50%) !important;
+	}
+
+	&__body {
+		@extend .modal-body;
+		overflow: auto;
+
+		@if $compactstyle {
+			padding: 0.5rem;
+		}
+
+		.normal-view {
+			overflow-x: auto;
+		}
+
+		& > div,
+		fieldset {
+			width: 100%;
+		}
+
+		.c-alert {
+			&:first-child {
+				// No margin necessary for the first alert message displayed in a popup.
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0.6rem;
+			}
+		}
+	}
+
+	&__footer {
+		@extend .modal-footer;
+		border-color: $light;
+		flex-direction: column;
+		justify-content: normal;
+		align-items: stretch !important;
+
+		@if $compactstyle {
+			margin-top: 0;
+			padding-top: 0.55rem;
+		} @else {
+			margin-top: 10px;
+			padding-top: 1.25rem;
+		}
+
+		.actions {
+			display: flex;
+			gap: 0.5rem;
+			align-self: flex-end;
+		}
+
+		.c-accordion {
+			margin-top: 0.5rem;
+		}
+	}
+}

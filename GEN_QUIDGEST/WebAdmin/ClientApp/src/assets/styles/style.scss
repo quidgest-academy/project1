@@ -1,0 +1,113 @@
+@import './quidgest.scss';
+
+.textRight {
+    text-align: right;
+}
+
+// jQuery-highlight
+.highlight {
+    background-color: yellow
+}
+
+/*******HOME PAGE********/
+#content-wrapper.content-wrapper {
+    padding: 30px;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 240px;
+    margin-top: -75px;
+    transition: none;
+}
+
+.feature-box {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    min-height: 20px;
+    padding: 19px;
+    text-align: center;
+    color: #333;
+}
+
+.feature-box:hover {
+    background-color: #337ab7;
+    border: 1px solid #e3e3e3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.feature-icon {
+    font-size: 50px;
+}
+
+.q-button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+}
+
+/*******************************************************************************************/
+
+.i-text,
+.i-image,
+.i-dbedit,
+.i-select,
+.i-checkbox,
+.i-date-picker,
+.i-radio__control {
+    margin-right: 0.25rem;
+}
+
+hr{
+    margin: .75rem 0 1rem 0;
+}
+
+table tbody td:first-child .b-icon {
+    border-color: transparent;
+    background: transparent;
+}
+
+input[type="text"].multiselect__input, input[type="text"].multiselect__single {
+    border: none;
+}
+
+td > div > .multiselect__tags {
+    border: none;
+}
+
+.multiselect__tags:hover {
+    cursor: pointer;
+}
+
+.assigned > td {
+    font-weight : bold;
+}
+
+.b-icon--disabled {
+    color : #dbd3d3;
+    cursor : not-allowed;
+}
+
+//Tags used to say which roles are assigned
+.role-tag {
+    @extend .e-badge, .e-badge--primary;
+    margin-right : 2px;
+    margin-left : 2px;
+    font-weight: bold;
+    font-size: 75%;
+}
+
+.clickable {
+    cursor : pointer;
+}
+
+//Tags for the help tooltip icon
+.field-help {
+    margin-left: 0.2rem;
+    color: #CCC;
+}
+
+.field-help:hover {
+    color: $input-label;
+}

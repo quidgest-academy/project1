@@ -1,0 +1,202 @@
+﻿$spacing-base: 0.25rem;
+
+// Bootstrap layout classes are removing these paddings
+// on smaller screens. We don't want that at the form container level.
+// Maybe should use $spacing-base ?
+#form-container {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.form-flow {
+	& > .form-actions {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.control-row-group {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		position: relative;
+	}
+}
+
+.control-row-group {
+	display: flex;
+	gap: $spacing-base;
+	width: 100%;
+
+	& + & {
+		margin-top: $spacing-base;
+	}
+
+	&.row-large-control {
+		display: block;
+	}
+
+	.control-join-group .c-groupbox {
+		white-space: initial !important;
+	}
+
+	.label-container {
+		display: flex;
+
+		&--inline {
+			display: inline-flex;
+		}
+	}
+}
+
+.control-join-group {
+	display: inline-flex;
+	align-items: stretch;
+	vertical-align: bottom;
+	white-space: nowrap;
+	max-width: 100%;
+	gap: $spacing-base;
+
+	& > .i-text,
+	& > .i-textarea {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-self: flex-end;
+
+		&.labeltopleft:has(span.q-help__subtext) {
+			max-width: min-content;
+		}
+
+		&.labeltopleft:has(span.q-help__subtext) {
+			max-width: min-content;
+		}
+	}
+
+	.label-container {
+		display: flex;
+
+		&--inline {
+			display: inline-flex;
+		}
+	}
+
+	.form-check-inline {
+		white-space: initial !important;
+		display: block;
+
+		.i-radio,
+		.i-checkbox {
+			display: inline-block;
+		}
+	}
+
+	.check-list-extended {
+		white-space: normal;
+	}
+
+	.i-button {
+		display: flex;
+		flex-direction: column-reverse;
+		align-self: flex-end;
+
+		// Positions the popover button next to the button
+		&:has(.btn-popover) {
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+
+		// Positions the popover button on the top side of the button
+		.label-container:has(> .btn-popover) {
+			align-self: flex-start;
+			margin-left: 0.25rem;
+		}
+	}
+}
+
+.control-dynamic-group {
+	flex: 1;
+
+	/* TODO: remove when QField wrapper is properly used */
+	> * {
+		width: 100%;
+	}
+}
+
+.heading-button-group {
+	float: left;
+}
+
+.heading-button-group-clear {
+	clear: both;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.form-horizontal {
+	position: relative;
+}
+
+.row-line-group {
+	& > .i-text {
+		width: 100%;
+	}
+
+	.i-textarea {
+		width: 100%;
+
+		&__field {
+			width: 100%;
+		}
+	}
+}
+
+#footer-action-btns {
+	display: flex;
+	gap: 0.5rem;
+
+	@if $btn-align-right {
+		justify-content: flex-end;
+	} @else {
+		justify-content: flex-start;
+	}
+}
+
+.form-actions {
+	padding: 1.5rem 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	background-color: transparent;
+	border-top: 1px solid $input-border-color;
+	display: flex;
+
+	@if $btn-align-right {
+		justify-content: flex-end;
+	} @else {
+		justify-content: flex-start;
+	}
+}
+
+.nested-form .form-actions {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 6px;
+	background: inherit;
+	border-top: none;
+}
+
+@media (max-width: 575.98px) {
+	.control-join-group {
+		white-space: normal;
+	}
+
+	.row {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+}

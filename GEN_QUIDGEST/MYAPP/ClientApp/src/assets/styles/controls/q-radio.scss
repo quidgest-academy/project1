@@ -1,0 +1,149 @@
+﻿.i-radio {
+	display: block;
+	position: relative;
+	padding-left: 1.5rem;
+	margin-bottom: 0;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&:hover input ~ &__field {
+		background-color: $light;
+	}
+
+	&:hover input:checked ~ &__field {
+		background-color: $primary-dark;
+		border: 1px solid $primary-dark;
+	}
+
+	&:not(:first-of-type) {
+		margin-top: 0.3rem;
+	}
+
+	&-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__control {
+		display: inline-flex;
+		flex-grow: 1;
+		align-self: flex-end;
+		align-items: flex-end;
+		width: 100%;
+
+		&.labelleft {
+			.i-radio__field {
+				float: right;
+				margin-left: 0.2rem;
+			}
+
+			span {
+				position: inherit;
+			}
+
+			.i-radio {
+				padding-left: 0;
+			}
+		}
+
+		.column:not(:last-child) {
+			margin-right: 0.75rem;
+		}
+	}
+
+	&__field {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 18px !important;
+		width: 18px !important;
+		background-color: $input-bg;
+		border-radius: 50%;
+		border: 1px solid $input-border-color;
+
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+	}
+
+	&__data {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.25rem;
+
+		&-content {
+			width: 100%;
+			display: flex;
+			align-items: center;
+
+			label {
+				margin-top: 0;
+				margin-right: 0.8rem;
+				flex-grow: 1;
+			}
+		}
+	}
+
+	/* When the radio button is checked, add a blue background */
+	& input:checked ~ &__field {
+		background-color: $primary;
+		border: 1px solid $primary;
+	}
+
+	/* Show the indicator (dot/circle) when checked */
+	& input:checked ~ &__field:after {
+		display: block;
+	}
+
+	/* Style the indicator (dot/circle) */
+	& &__field:after {
+		top: 5px;
+		left: 5px;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: white;
+		background-color: $container;
+	}
+
+	&__label {
+		color: $input-label;
+		cursor: pointer;
+		line-height: 16px;
+	}
+
+	&--disabled,
+	&--disabled:hover {
+		cursor: not-allowed;
+
+		.i-radio__field {
+			background-color: $light;
+		}
+
+		input:checked ~ .i-radio__field {
+			background-color: $gray;
+			border: 1px solid $gray;
+		}
+	}
+
+	&__error {
+		color: $danger;
+		font-size: 0.875rem;
+	}
+
+	input {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0;
+		cursor: pointer;
+	}
+}

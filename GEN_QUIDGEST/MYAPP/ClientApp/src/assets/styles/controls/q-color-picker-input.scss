@@ -1,0 +1,38 @@
+﻿@import "vue-color-kit/dist/vue-color-kit.css";
+
+.q-colorpicker-input {
+	position: relative;
+
+	&-color {
+		width: 18px;
+		height: 18px;
+		border-radius: 0.25rem;
+
+		&-container {
+			cursor: pointer;
+		}
+	}
+
+	.i-text__field {
+		border-left: none;
+		border-right: none;
+		cursor: pointer;
+	}
+
+	.hu-color-picker {
+		position: absolute;
+	}
+
+	.q-input-group {
+		&__append {
+			border: solid 1px $input-border-color;
+			border-left: none;
+		}
+
+		&__prepend {
+			.q-colorpicker-input-color-container {
+				background: none;
+			}
+		}
+	}
+}

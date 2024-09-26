@@ -1,0 +1,46 @@
+{
+  "name": "clientapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "set NODE_OPTIONS=--max_old_space_size=10240 && vite build --out-dir dist --mode production",
+    "build:dev": "set NODE_OPTIONS=--max_old_space_size=8192 && vite build --out-dir dist --mode development",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --ext .js,.vue src --fix",
+    "vite:run": "set NODE_OPTIONS=--max_old_space_size=10240 && vite",
+    "vite:serve": "set NODE_OPTIONS=--max_old_space_size=10240 && vite serve",
+    "vite:preview": "set NODE_OPTIONS=--max_old_space_size=10240 && vite preview"
+  },
+  "dependencies": {
+    "@quidgest/ui": "0.13.1",
+    "@vuepic/vue-datepicker": "3.0.0",
+    "bootbox": "5.5.2",
+    "bootstrap": "4.6.1",
+    "d3": "7.0.0",
+    "dagre-d3": "0.6.4",
+    "jquery": "3.5.1",
+    "jquery-highlight": "3.5.0",
+    "jquery-ui": "1.12.1",
+    "jquery.flot": "0.8.3",
+    "lodash-es": "4.17.20",
+    "mitt": "2.1.0",
+    "moment": "2.24.0",
+    "popper.js": "1.16.1",
+    "vue": "3.4.20",
+    "vue-i18n": "9.9.1",
+    "vue-router": "4.2.2",
+    "vuex": "4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.22.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.77.6",
+    "vite": "^5.1.4"
+  }
+}

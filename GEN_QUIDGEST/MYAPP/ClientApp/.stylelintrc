@@ -1,0 +1,6 @@
+{
+	"extends": "stylelint-config-sass-guidelines",
+	"rules": {
+		"unit-allowed-list": ["rem", "s", "vw", "vh", "%"]
+	}
+}

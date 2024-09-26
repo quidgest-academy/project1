@@ -1,0 +1,26 @@
+﻿.checklist--button {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	padding: 1px 6px !important;
+}
+
+.disabled__checklist--button {
+	opacity: 0.8 !important;
+	background: #607d8b !important;
+	border: gray !important;
+	pointer-events: none !important;
+}
+
+.checklist__search--input > input {
+	outline: none !important;
+	color: black !important;
+	border: none !important;
+	box-shadow: none !important;
+	border-bottom: 2px solid #009aa5 !important;
+	border-radius: 0 !important;
+	background-color: #c9c8c838 !important;
+}
+
+.checklist__search--input > input:focus {
+	box-shadow: none !important;
+}

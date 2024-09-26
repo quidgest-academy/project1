@@ -1,0 +1,275 @@
+﻿.i-switch {
+	vertical-align: middle;
+}
+
+.i-switch, .i-switch label, .i-switch input, .i-switch .i-switch__label {
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.i-switch label {
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.i-switch label input[type="checkbox"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.i-switch label .i-switch__label,
+.i-switch label input[type=checkbox][disabled] + .i-switch__label {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 16px;
+	vertical-align: middle;
+	content: "";
+	background-color: $input-label;
+	border-radius: 20px;
+	transition: background-color 0.3s ease 0s;
+	margin-right: 0.5rem;
+	top: -2px;
+}
+
+.i-switch label .i-switch__label.i-switch--undefined,
+.i-switch label input[type=checkbox][disabled] + .i-switch__label.i-switch--undefined {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 16px;
+	vertical-align: middle;
+	content: "";
+	background-color: $light;
+	border-radius: 20px;
+	transition: background-color 0.3s ease 0s;
+	margin-right: 0.5rem;
+	top: -2px;
+}
+
+.i-switch label .i-switch__label::after {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	content: "";
+	background-color: $background;
+	border-radius: 20px;
+	margin-left: 0.05rem;
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+	transition: left 0.3s ease 0s, background-color 0.3s ease 0s, box-shadow 0.1s ease 0s;
+}
+
+.i-switch label input[type=checkbox][disabled] + .i-switch__label::after,
+.i-switch label input[type=checkbox][disabled]:checked + .pmd-switch-label::after {
+	background-color: #d5dce0;
+}
+
+.i-switch label input[type=checkbox] + .i-switch__label:active::after,
+.i-switch label input[type=checkbox][disabled] + .i-switch__label:active::after {
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.i-switch label input[type=checkbox]:checked + .i-switch__label::after {
+	left: 14px;
+}
+.i-switch label input[type=checkbox] + .i-switch__label.i-switch--undefined::after {
+	left: 8px;
+}
+
+.i-switch label input[type=checkbox]:checked + .i-switch__label,
+.togglebutton-default label input[type=checkbox]:checked + .i-switch__label {
+	background-color: $primary;
+}
+
+.i-switch label input[type=checkbox]:checked + .i-switch-label::after,
+.togglebutton-default label input[type=checkbox]:checked + .i-switch__label::after {
+	background-color: $primary;
+}
+
+.i-switch label input[type=checkbox]:checked + .i-switch__label:active::after,
+.togglebutton-default label input[type=checkbox]:checked + .i-switch__label:active::after {
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 5px rgba(0, 169, 206, 0.35);
+}
+
+.togglebutton-black label input[type=checkbox]:checked + .i-switch__label:active::after {
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.i-switch__label-text {
+	color: $input-label;
+	line-height: 18px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	margin-right: 0.5rem;
+}
+
+.i-switch label input[type="checkbox"] ~ .i-switch__label-text {
+	color: $input-label;
+
+	@if $enable-switch-single-label {
+		&[data-option="false"] {
+			display: inline-flex;
+			float: right;
+		}
+
+		&[data-option="true"] {
+			display: none;
+			float: right;
+		}
+	}
+	@else {
+		&[data-option="false"] {
+			display: inline-flex;
+			float: left;
+		}
+
+		&[data-option="true"] {
+			display: inline-flex;
+			float: right;
+		}
+	}
+}
+
+@if $enable-switch-single-label == false {
+	.i-switch label input[type="checkbox"]:not(:checked) ~ .i-switch__label-text {
+		&[data-option="false"] {
+			color: $input-color;
+		}
+	}
+}
+
+.i-switch label input[type="checkbox"]:checked ~ .i-switch__label-text {
+	@if $enable-switch-single-label {
+		&[data-option="false"] {
+			display: none;
+			float: right;
+		}
+
+		&[data-option="true"] {
+			display: inline-flex;
+			float: right;
+			color: $primary;
+		}
+	}
+	@else {
+		&[data-option="true"] {
+			color: $primary;
+		}
+	}
+}
+
+.i-switch label input[type="checkbox"] ~ .i-switch__label-text.i-switch--on-left {
+	float: left;
+}
+
+@media (forced-colors: active) {
+	.i-switch label .i-switch__label,
+	.i-switch label input[type=checkbox][disabled] + .i-switch__label {
+		forced-color-adjust: none;
+		border: 1px solid gray;
+		background-color: black;
+	}
+
+	.i-switch label input[type=checkbox]:checked + .i-switch__label {
+		forced-color-adjust: none;
+		background-color: white;
+	}
+
+	.i-switch label .i-switch__label::after {
+		border: 1px solid gray;
+	}
+}
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	left: 2px;
+	top: 4px;
+	width: 30px;
+	height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.q-slider {
+	-webkit-appearance: none;
+	appearance: none;
+	position: relative;
+	cursor: pointer;
+	top: 10%;
+	height: 10px;
+	width: 150px;
+	outline: none;
+	border-radius: 2px;
+	box-shadow: 0px 0.5px 0.5px 0.5px $on-background;
+	background: linear-gradient(90deg, $primary 50%, $gray 50%);
+	-webkit-transition: $transition-speed;
+	transition: $transition-speed;
+}
+
+/* slider circle */
+.q-slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 23px;
+	height: 23px;
+	border: 1px solid $secondary;
+	border-radius: 50%;
+	background: #fff;
+	cursor: pointer;
+}
+
+.slider-container {
+	position: relative;
+}
+
+div .slider-container > p.min {
+	position: absolute;
+	margin-left: 2px;
+	margin-top: 5px;
+	color: $on-background;
+}
+
+div .slider-container > p.max {
+	position: absolute;
+	width: 97%;
+	text-align: right;
+	margin-top: 5px;
+	color: $on-background;
+}
+
+input:checked + .q-slider {
+	background-color: $primary;
+}
+
+input:focus + .q-slider {
+	box-shadow: 0 0 1px $primary;
+}
+
+input:checked + .q-slider:before {
+	-webkit-transform: translateX(13px);
+	-ms-transform: translateX(13px);
+	transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.q-slider.round {
+	border-radius: 17px;
+}
+
+.q-slider.round:before {
+	border-radius: 50%;
+}

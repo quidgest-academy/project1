@@ -1,0 +1,220 @@
+﻿.property-list-container {
+	.column-header-content {
+		align-items: center !important;
+	}
+
+	.property-list__value--inputs {
+		position: absolute !important;
+		top: 50% !important;
+		right: 45% !important;
+		left: unset;
+	}
+
+	.property-list__grouping-i-checkbox {
+		position: absolute !important;
+		top: 50%;
+		right: 36px;
+		left: unset;
+	}
+
+	.property-list--relative {
+		position: relative !important;
+		vertical-align: bottom !important;
+		padding-bottom: 9px !important;
+
+		input {
+			border-radius: 0.25rem !important;
+		}
+	}
+
+	.dropdown-list {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 430 !important;
+		float: left;
+		box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+		font-size: 0.9rem;
+		color: $gray-dark;
+		text-align: left;
+		padding: 0;
+		list-style: none;
+		background-color: $white;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+	}
+
+	.dropdown-submenu {
+		position: relative;
+
+		.dropdown-menu {
+			top: 0;
+			left: 100%;
+			margin-top: -1px;
+		}
+	}
+
+	.submenu {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+	}
+
+	.nested__dropdown {
+		position: relative;
+	}
+
+	.dropdown_item {
+		cursor: pointer;
+		padding: 2.5px;
+		display: flex;
+		gap: 8px;
+
+		&:hover {
+			background: $light;
+		}
+	}
+
+	.dropdown_item > span {
+		color: $primary !important;
+	}
+
+	.property-list__header-dropdown {
+		padding-bottom: 2.5px;
+		font-size: 0.8rem;
+		font-weight: 400;
+	}
+
+	.dropdown-trigger {
+		cursor: pointer;
+		border: 1px solid $white;
+		padding: 0 3px;
+		width: 2.5rem;
+		background: transparent;
+
+		.dropdown-icon-group {
+			color: $white;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 0 3px 0;
+		}
+
+		&:hover {
+			background: #006067;
+		}
+	}
+
+	.property-list_value_column {
+		width: 100%;
+
+		input {
+			border: none !important;
+			border-radius: 0 !important;
+
+			&:focus {
+				box-shadow: none !important;
+				background-color: $light !important;
+			}
+		}
+
+		.property-list_property_input {
+			&:focus {
+				box-shadow: none !important;
+			}
+		}
+
+		.property-list__value--inputs {
+			width: 100% !important;
+
+			input {
+				border: none !important;
+
+				&:focus {
+					box-shadow: none !important;
+				}
+			}
+
+			button {
+				padding: 0 !important;
+				border: none !important;
+			}
+		}
+	}
+
+	.property-list-grouping-addnew {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.property-list-addnew-cell {
+		display: flex;
+		align-items: baseline;
+		justify-content: flex-end;
+	}
+
+	.close_add-new {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+	}
+
+	.grouping {
+		.i-text__field {
+			float: left;
+			margin-right: 8px;
+		}
+
+		.date {
+			float: left !important;
+			width: 8rem;
+		}
+	}
+
+	.property-list_addnew {
+		height: 4.6rem;
+	}
+
+	.close_addnew-circle {
+		cursor: pointer;
+		background: #009aa5;
+		border-radius: 50%;
+		height: 1.2rem;
+		width: 1.2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	.add__new-input-group {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	.propertyname-cell {
+		align-items: center;
+		justify-content: center;
+
+		input {
+			border: none !important;
+			border-radius: 0 !important;
+
+			&:focus {
+				box-shadow: none !important;
+			}
+		}
+	}
+
+	.focus {
+		input {
+			background-color: $light !important;
+
+			&:focus {
+				background-color: $light !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+﻿.carousel {
+	width: 100%;
+	height: 360px;
+	overflow: hidden;
+	border-radius: 5px;
+
+	&-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	&-inner {
+		height: 100%;
+	}
+
+	&-item {
+		height: 100%;
+		background-size: cover;
+		background-clip: padding-box;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	&-item:hover,
+	&-control-next:hover,
+	&-control-prev:hover {
+		cursor: pointer;
+	}
+
+	&-content {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 0;
+		height: 66%;
+		color: white;
+	}
+
+	&-caption {
+		h2:hover,
+		p:hover {
+			cursor: auto;
+		}
+	}
+}
